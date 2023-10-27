@@ -3,9 +3,10 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
+import Header from '@/components/Header'
 import Providers from '@/components/Providers'
 
-import './globals.css'
+import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +25,8 @@ export default function RootLayout({
     <html lang="tr">
       <body className={inter.className}>
         <Providers>
-          <main className="mx-auto h-screen max-w-6xl p-4">{children}</main>
+          <Header />
+          <main className="mx-auto mb-4 mt-24 max-w-screen-md">{children}</main>
         </Providers>
       </body>
     </html>
