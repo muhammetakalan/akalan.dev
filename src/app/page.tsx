@@ -1,6 +1,8 @@
+'use client'
+
 export default function Home() {
   return (
-    <div className="h-full flex flex-col justify-center items-center">
+    <div className="flex h-full flex-col items-center justify-center">
       <div className="h-24">
         <svg
           width="100%"
@@ -14,7 +16,7 @@ export default function Home() {
           />
         </svg>
       </div>
-      <h1 className="font-bold mt-4">COMING SOON</h1>
+      <h1 className="mt-4 font-bold">COMING SOON</h1>
     </div>
   )
 }
