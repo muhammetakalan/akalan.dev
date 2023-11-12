@@ -7,7 +7,7 @@ module.exports = {
   singleQuote: true,
   arrowParens: 'avoid',
   trailingComma: 'none',
-  importOrder: ['react', 'next', '@/components', './'],
+  importOrder: ['react', 'next', '<THIRD_PARTY_MODULES>', '@/components', './'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true
 }
