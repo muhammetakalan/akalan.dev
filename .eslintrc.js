@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['@typescript-eslint', 'unused-imports', 'simple-import-sort'],
+  plugins: ['@typescript-eslint', 'unused-imports'],
   extends: [
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
@@ -7,11 +7,6 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'warn',
-
-    'simple-import-sort/imports': [
-      'warn',
-      { groups: [['react'], ['next'], ['@/components'], ['./']] }
-    ]
+    'unused-imports/no-unused-imports': 'warn'
   }
 }
