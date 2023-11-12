@@ -1,17 +1,40 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
 export default function Header() {
-  const [open, setOpen] = useState(false)
+  const [isTop, setIsTop] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset === 0) {
+        setIsTop(true)
+      } else {
+        setIsTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <header className="fixed left-0 right-0 top-0">
-      <div className="mx-auto flex h-20 max-w-screen-md items-center justify-between border-b bg-background/75 font-medium backdrop-blur-lg">
+    <header
+      className={`sticky top-0 z-10 border-b font-medium backdrop-blur-lg transition-all ${
+        !isTop ? 'bg-background/90' : ''
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-screen-lg items-center justify-between">
         <div className="flex space-x-4">
-          <Link className="cursor-pointer capitalize" href="#">
+          <Link
+            className="cursor-pointer capitalize"
+            href="/posts/deneme-yazisi"
+          >
             yazılarım
           </Link>
           <Link className="cursor-pointer capitalize" href="#">
@@ -37,7 +60,7 @@ export default function Header() {
           <Link className="capitalize transition-all" href="#">
             fotoğraflar
           </Link>
-          <Link className="cursor-pointer capitalize" href="#">
+          <Link className="cursor-pointer capitalize" href="/about">
             hakkımda
           </Link>
         </div>
