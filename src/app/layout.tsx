@@ -1,14 +1,11 @@
-import React from 'react'
-
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
 import Header from '@/components/Header'
 import Providers from '@/components/Providers'
 
 import '@/styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: 'Muhammet Emin Akalan',
@@ -22,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="tr">
-      <body className={inter.className}>
+    <html className={`${GeistSans.variable} ${GeistMono.variable}`} lang="tr">
+      <body>
         <Providers>
           <Header />
-          <main className="mx-auto mb-4 mt-24 max-w-screen-md">{children}</main>
+          <main className="prose mx-auto my-7 max-w-screen-lg dark:prose-invert">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
