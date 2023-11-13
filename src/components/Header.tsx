@@ -1,34 +1,8 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
 import Link from 'next/link'
 
 export default function Header() {
-  const [isTop, setIsTop] = useState(true)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset === 0) {
-        setIsTop(true)
-      } else {
-        setIsTop(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
   return (
-    <header
-      className={`sticky top-0 z-10 border-b font-medium backdrop-blur-lg transition-all ${
-        !isTop ? 'bg-background/90' : ''
-      }`}
-    >
+    <header className="sticky top-0 z-10 border-b bg-background/90 font-medium backdrop-blur-lg transition-all">
       <div className="mx-auto flex h-20 max-w-screen-lg items-center justify-between">
         <div className="flex space-x-4">
           <Link
@@ -57,7 +31,7 @@ export default function Header() {
         </Link>
 
         <div className="flex space-x-4">
-          <Link className="capitalize transition-all" href="#">
+          <Link className="capitalize transition-all" href="/photos">
             fotoğraflar
           </Link>
           <Link className="cursor-pointer capitalize" href="/about">
