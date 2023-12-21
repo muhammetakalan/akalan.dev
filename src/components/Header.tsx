@@ -5,10 +5,7 @@ export default function Header() {
     <header className="sticky top-0 z-10 border-b bg-background/90 font-medium backdrop-blur-lg transition-all">
       <div className="mx-auto flex h-20 max-w-screen-lg items-center justify-between">
         <div className="flex space-x-4">
-          <Link
-            className="cursor-pointer capitalize"
-            href="/posts/deneme-yazisi"
-          >
+          <Link className="cursor-pointer capitalize" href="/posts">
             yazılarım
           </Link>
           <Link className="cursor-pointer capitalize" href="/bookmarks">

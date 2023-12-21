@@ -42,32 +42,28 @@ export default async function Bookmarks() {
         kaynakları bulabilirsiniz.
       </p>
 
-      {data &&
-        data.items.map((item, i) => (
-          <a className="block" href={item.link} target="_blank" key={i}>
-            <Card className="relative flex overflow-hidden">
-              <Image
-                className="h-32 w-full max-w-48 bg-cover"
-                src={item.cover}
-                alt="cover"
-                width={192}
-                height={128}
-              />
-              <CardHeader>
-                <CardTitle className="line-clamp-1">{item.title}</CardTitle>
-                <CardDescription className="line-clamp-2">
-                  {item.excerpt}
-                </CardDescription>
-                <Badge
-                  className="absolute bottom-4 right-4"
-                  variant="secondary"
-                >
-                  {moment(item.created).startOf('hour').fromNow()}
-                </Badge>
-              </CardHeader>
-            </Card>
+      {data.items.map((item, i) => (
+        <Card className="relative overflow-hidden" key={i}>
+          <a className="flex" href={item.link} target="_blank">
+            <Image
+              className="h-32 w-full max-w-48 bg-muted-foreground object-cover"
+              src={item.cover}
+              alt="cover"
+              width={192}
+              height={128}
+            />
+            <CardHeader>
+              <CardTitle className="line-clamp-1">{item.title}</CardTitle>
+              <CardDescription className="line-clamp-2">
+                {item.excerpt}
+              </CardDescription>
+              <Badge className="absolute bottom-4 right-4" variant="secondary">
+                {moment(item.created).startOf('hour').fromNow()}
+              </Badge>
+            </CardHeader>
           </a>
-        ))}
+        </Card>
+      ))}
     </div>
   )
 }
