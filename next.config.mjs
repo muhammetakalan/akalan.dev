@@ -4,9 +4,7 @@ import remarkGfm from 'remark-gfm'
 
 const nextConfig = {
   pageExtensions: ['mdx', 'ts', 'tsx'],
-  images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }]
-  }
+  images: { remotePatterns: [{ protocol: 'https', hostname: '*' }] }
 }
 
 const withMDX = createMDX({

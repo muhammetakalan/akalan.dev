@@ -3,4 +3,12 @@ type Frontmatter = {
   date: string
 }
 
-export type { Frontmatter }
+interface Bookmark {
+  link: string
+  cover: string
+  title: string
+  excerpt: string
+  created: string
+}
+
+export type { Frontmatter, Bookmark }

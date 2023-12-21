@@ -11,7 +11,7 @@ export default function Header() {
           >
             yazılarım
           </Link>
-          <Link className="cursor-pointer capitalize" href="#">
+          <Link className="cursor-pointer capitalize" href="/bookmarks">
             yer imlerim
           </Link>
         </div>
