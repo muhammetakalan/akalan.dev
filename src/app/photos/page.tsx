@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import { blurhashToBase64 } from 'blurhash-base64'
+import Image from 'next/image'
 import { createApi } from 'unsplash-js'
 
 async function getData() {
@@ -28,10 +27,10 @@ export default async function Photos() {
   const data = await getData()
 
   return (
-    <div className="not-prose columns-3 [&>div:not(:first-child)]:mt-4">
+    <div className="not-prose columns-2 md:columns-3 [&>div:not(:first-child)]:mt-4">
       {data.map((photo, i) => (
         <div
-          className="relative h-96 overflow-hidden rounded-lg bg-muted"
+          className="relative h-64 overflow-hidden rounded-lg bg-muted sm:h-96"
           key={i}
         >
           <Image

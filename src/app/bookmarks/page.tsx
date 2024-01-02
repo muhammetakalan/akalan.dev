@@ -1,7 +1,3 @@
-import Image from 'next/image'
-
-import moment from 'moment'
-
 import { Badge } from '@/components/ui/badge'
 import {
   Card,
@@ -9,6 +5,8 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
+import moment from 'moment'
+import Image from 'next/image'
 
 import { Bookmark } from '@/types'
 import 'moment/locale/tr'

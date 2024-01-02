@@ -11,4 +11,4 @@ interface Bookmark {
   created: string
 }
 
-export type { Frontmatter, Bookmark }
+export type { Bookmark, Frontmatter }

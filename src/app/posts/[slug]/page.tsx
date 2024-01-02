@@ -1,12 +1,17 @@
-import { serialize } from 'next-mdx-remote/serialize'
-
+import { MdxContent } from '@/components/mdx-content'
+import { Frontmatter } from '@/types'
 import { promises as fs } from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
 
-import { MdxContent } from '@/components/mdx-content'
+export async function generateStaticParams() {
+  const files = await fs.readdir('content')
 
-import { Frontmatter } from '@/types'
+  return files.map(file => {
+    return { slug: path.parse(file).name }
+  })
+}
 
 async function getPost(filepath: string) {
   const raw = await fs.readFile(filepath, 'utf-8')
@@ -21,22 +26,12 @@ async function getPost(filepath: string) {
   return { frontmatter, serialized }
 }
 
-export async function generateStaticParams() {
-  const files = await fs.readdir('content')
-
-  return files.map(file => {
-    return { slug: path.parse(file).name }
-  })
-}
-
 export default async function Posts({
   params: { slug }
 }: {
   params: { slug: string }
 }) {
   const { serialized, frontmatter } = await getPost(`content/${slug}.mdx`)
-
-  const akalan = 'safas'
 
   return (
     <div>

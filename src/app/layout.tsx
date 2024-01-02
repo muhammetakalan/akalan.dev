@@ -1,11 +1,9 @@
-import type { Metadata } from 'next'
-
 import Header from '@/components/Header'
 import Providers from '@/components/Providers'
-
 import '@/styles/globals.css'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Muhammet Emin Akalan',
@@ -23,7 +21,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Header />
-          <main className="prose mx-auto my-7 max-w-screen-lg dark:prose-invert">
+          <main className="prose mx-auto my-7 max-w-screen-lg px-4 dark:prose-invert">
             {children}
           </main>
         </Providers>

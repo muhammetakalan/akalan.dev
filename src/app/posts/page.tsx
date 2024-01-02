@@ -1,16 +1,13 @@
-import { serialize } from 'next-mdx-remote/serialize'
-
-import fs from 'fs'
-import path from 'path'
-
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle
 } from '@/components/ui/card'
-
 import { Frontmatter } from '@/types'
+import fs from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
+import path from 'path'
 
 async function getData() {
   const contentDir = 'content'
